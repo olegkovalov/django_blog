@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  api_django_blog:
+    build:
+      context: ..
+      dockerfile: build/Dockerfile.api
+    depends_on:
+      - postgres
+    environment:
+      - DJANGO_BLOG_DATABASE_URL=psql://django_blog:django_blog@postgres:5432/django_blog
+    ports:
+      - "8000:8000"
+  postgres:
+    image: postgres:latest
+    volumes:
+      - "django_blog-pgdata:/var/lib/postgresql/data"
+    environment:
+      - POSTGRES_DB=django_blog
+      - POSTGRES_USER=django_blog
+      - POSTGRES_PASSWORD=django_blog
+    ports:
+      - "5432:5432"
+  # redis:
+  #   image: redis:latest
+  # elastic:
+  #   image: elasticsearch:7.2.0
+  #   volumes:
+  #     - "django_blog-elasticdata:/usr/share/elasticsearch/data"
+  #   environment:
+  #     - discovery.type=single-node
+  #   ports:
+  #     - "9200:9200"
+  #     - "9300:9200"
+
+volumes:
+  django_blog-pgdata:
+  django_blog-elasticdata:

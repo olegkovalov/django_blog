@@ -1,0 +1,16 @@
+-r common.in
+
+pip-tools
+black
+bandit
+pytest-django
+pytest-cov
+pytest-bandit
+pytest
+pylama
+django-extensions
+Werkzeug
+ipython
+ipdb
+django-debug-toolbar
+Pillow
