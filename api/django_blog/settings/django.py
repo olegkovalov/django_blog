@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     # our apps
     "django_blog.apps.common.apps.CommonConfig",
     "django_blog.apps.account.apps.AccountConfig",
+    "django_blog.apps.blog.apps.BlogConfig",
 
 ] + env.list("DJANGO_BLOG_DEV_INSTALLED_APPS", default=[])
 
@@ -128,3 +129,7 @@ STATICFILES_DIRS = (rel("static/"),)
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = rel("media/")
+
+REST_FRAMEWORK = {
+    'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.URLPathVersioning'
+}

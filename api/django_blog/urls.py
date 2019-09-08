@@ -20,6 +20,7 @@ from django.urls import path, include, re_path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    re_path(r'api/(?P<version>[v1|v2]+)/', include('django_blog.apps.blog.rest_api.urls')),
 ]
 
 
