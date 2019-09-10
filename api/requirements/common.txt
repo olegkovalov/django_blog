@@ -12,3 +12,4 @@ psycopg2-binary==2.8.3
 pytz==2019.2              # via django
 sqlparse==0.3.0           # via django
 Pillow==6.1.0
+drf-yasg==1.16.1

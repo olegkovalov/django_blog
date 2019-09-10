@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # 3rd party apps
     "rest_framework",
+    "drf_yasg",
     # our apps
     "django_blog.apps.common.apps.CommonConfig",
     "django_blog.apps.account.apps.AccountConfig",
