@@ -5,11 +5,16 @@
 #    pip-compile /tmp/tmp.be_skeleton_builder/api/requirements/common.in
 #
 django-environ==0.4.5
-django==2.2.4
+    # via -r common.in
+django==2.2.21
+    # via -r common.in
 djangorestframework==3.10.2
+    # via -r common.in
 gunicorn==19.9.0
+    # via -r common.in
 psycopg2-binary==2.8.3
-pytz==2019.2              # via django
-sqlparse==0.3.0           # via django
-Pillow==6.1.0
-drf-yasg==1.16.1
+    # via -r common.in
+pytz==2019.2
+    # via django
+sqlparse==0.3.0
+    # via django
